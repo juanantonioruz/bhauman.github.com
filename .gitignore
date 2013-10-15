@@ -1,6 +1,8 @@
 .DS_Store
 /.lein-repl-history
 \#*
+.repl/
+out/
 \.\#*
 _site
 target
