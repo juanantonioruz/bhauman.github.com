@@ -12,14 +12,16 @@
 (defn modal-form [{:keys [mode task-form] :as state}]
   (if mode
     [:div.modal-form
-     [:h4 "Add Task"]
+     [:h4 "Add My Task"]
      [:form.new-task-form
       [:input.new-task-name  {:type "text"
                               :value (:content task-form)
                               :name "content"
                               :placeholder "New Task"}]
       [:p
-       [:a {:href "#" :class " cancel-new-todo btn"} "cancel"]]]]))
+       [:a {:href "#" :class " cancel-new-todo btn"} "cancela"]]]]))
+
+(log js/console "eyyyy")
 
 (defn todo-task [idx task]
     [:li (:content task)])
@@ -27,7 +29,7 @@
 (defn todo-list [{:keys [todo-list] :as state}]
   [:div
    [:p
-    [:a {:href "#" :class "new-todo btn btn-primary"} "Add task"]]
+    [:a {:href "#" :class "new-todo btn btn-primary"} "Add my task"]]
    [:ul {:class "todo-list unstyled"}
     (map-indexed todo-task todo-list)]
    (modal-form state)])
